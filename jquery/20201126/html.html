@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Html</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h1 span{
+            color:red;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container pb-5">
+          <div class="py-2">
+            <button type="button" class="btn btn-primary" id="getText">get text</button>
+            <button type="button" class="btn btn-primary" id="setText">set text</button>
+            <button type="button" class="btn btn-primary" id="getHtml">get html</button>
+            <button type="button" class="btn btn-primary" id="setHtml">set html</button>
+          </div>
+          <h1 id="source">Hello <span>world!</span></h1>
+          <h1 id="target"></h1>
+          <h2>.attr()</h2>
+          <div class="py-2">
+              <button type="button" class="btn btn-primary" id="getAttr">get attr</button>
+              <button type="button" class="btn btn-primary" id="setAttr">set attr</button>
+          </div>
+          <img id="sourceImg" src="images/pic1.jpg" alt="育成高中">
+          <div class="py-2">
+            <button type="button" class="btn btn-primary" id="setLink">set link</button>
+          </div>
+          <a id="link" href="https://www.google.com" title="google">google</a>
+          <h2>.prop()</h2>
+          <div class="py-2">
+              <button type="button" class="btn btn-primary" id="getProp">get prop</button>
+              <button type="button" class="btn btn-primary" id="setProp">set prop</button>
+          </div>
+          <div>
+            <input type="checkbox" id="checkbox" > 我同意使用者條款
+          </div>
+          <button class="btn btn-primary" id="go" disabled>go</button>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $("#getText").click(function(){
+            let content=$("#source").text();
+            console.log(content)
+            $("#target").text(content)
+        })
+        $("#setText").click(function(){
+            $("#source").text("new content");
+        })
+        $("#getHtml").click(function(){
+            let content=$("#source").html();
+            console.log(content)
+            // $("#target").html(content)
+            $("#target").text(content)
+        })
+        $("#setHtml").click(function(){
+            $("#source").html("new <span>content</span>");
+        })
+        $("#getAttr").click(function(){
+            let img=$("#sourceImg").attr("src")
+            // console.log(img)
+            let name=$("#sourceImg").attr("alt")
+            console.log(name)
+        })
+        $("#setAttr").click(function(){
+            // $("#sourceImg").attr("src", "images/pic2.jpg").attr("alt", "竹林高中")
+            $("#sourceImg").attr({
+                "src": "images/pic2.jpg",
+                "alt": "竹林高中"
+            })
+        })
+
+        $("#setLink").click(function(){
+            $("#link").attr({
+                "title": "facebook",
+                "href": "https://www.facebook.com"
+            }).text("facebook")
+        })
+
+        $("#getProp").click(function(){
+            let checked=$("#checkbox").prop("checked")
+            console.log(checked)
+        })
+        $("#setProp").click(function(){
+            $("#checkbox").prop("checked", true)
+            // $("#go").prop("disabled", true)
+        })
+
+        $("#checkbox").click(function(){
+            // let checked=$(this).prop("checked")
+            // if(checked){
+            //     $("#go").prop("disabled", false)
+            // }else{
+            //     $("#go").prop("disabled", true)
+            // }
+            // $("#go").prop("disabled", !checked)
+
+            $("#go").prop("disabled", !$(this).prop("checked"))
+
+        })
+    </script>
+  </body>
+</html>

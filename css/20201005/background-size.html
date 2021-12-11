@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background size</title>
+    <style>
+        .map{
+            max-width: 800px;
+            height: 300px;
+            margin:0 auto;
+            background: url("images/map.png") center center no-repeat;
+            border: 2px solid #333;
+        }
+        .contain{
+            background-size: contain;
+        }
+        .cover{
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="map"></div>
+    <div class="map contain"></div>
+    <div class="map cover"></div>
+
+</body>
+</html>

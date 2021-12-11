@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background: #eee;
+        }
+        a, a:link{
+            color: #3b5998;
+            text-decoration: none;
+        }
+        a:visited{
+            
+        }
+        a:hover{
+            
+        }
+        a:active{
+            /* color:red; */
+        }
+        
+        .wrapper{
+            max-width: 960px;
+            margin:0 auto;
+        }
+        .d-flex{
+            display: flex;
+        }
+        .cover-fit{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .main-header{
+            background: #fff;
+            padding:10px 0;
+        }
+        .main-header .d-flex{
+            justify-content: space-between;
+        }
+        .logo{
+            height: 48px;
+        }
+        .main-nav{
+            background: #3b5998;
+        }
+        .main-nav ul{
+            /* margin: 0; */
+            padding:0;
+            list-style: none;
+        }
+        .main-nav li{
+            position:relative;
+        }
+        .main-nav li a{
+            color: #fff;
+            padding: 10px 20px;
+            display: block;
+        }
+        .main-nav li a:hover, .main-nav li.active a{
+            background: #8b9dc3;
+        }
+        .submenu{
+            position:absolute;
+            background: #3b5998;
+            /* display: none; */
+            width: 100%;
+            transition: .3s;
+            opacity: 0;
+            /* height: 0; */
+            overflow: hidden;
+            max-height: 0;
+        }
+        .main-nav li:hover .submenu{
+            /* display: block; */
+            opacity: 1;
+            /* height: 110px; */
+            max-height: 150px;
+        }
+        @media screen and (max-width: 768px){
+            .main-nav li{
+                /* flex-grow: 1;
+                flex-basis: 0px; */
+                flex: 1 0 0;
+                text-align: center;
+            }
+            .main-nav li a{
+                padding: 10px 0;
+                /* font-size: 14px; */
+            }
+        }
+        main.d-flex{
+            margin-top: 20px;
+        }
+        .left-aside figure{
+            width: 160px;
+            height: 160px;
+            margin:0 0 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .side-nav{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        /* .active{
+            border: 1px solid red;
+        } */
+        .side-nav li a{
+            display: block;
+            padding: 8px 10px;
+            color: #333;
+            border-left: 4px solid transparent;
+        }
+        .side-nav li a:hover, .side-nav li.active a{
+            color: #3b5998;
+            background: #fff;
+            border-left: 4px solid #3b5998;
+        }
+        .card{
+            background: #fff;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .banner{
+            height: 160px;
+            background: url("images/slide1.jpeg") center center;
+            background-size: cover;
+            margin-bottom: 10px;
+        }
+        .card h1{
+            font-size: 2rem;
+            margin:0 0 10px;
+        }
+        .right-aside{
+            width: 160px;
+            display: flex;
+            align-items: flex-end;
+            flex-shrink: 0;
+        }
+        .right-aside img{
+            width: 100%;
+        }
+        article{
+            flex-grow: 1;
+            margin: 0 10px;
+            min-height: calc(100vh - 180px);
+        }
+        article p{
+            line-height: 1.7;
+        }
+        @media screen and (max-width: 768px){
+            /* main.d-flex{
+                flex-wrap: wrap;
+            }
+            article{
+                width: 100%;
+            } */
+            main.d-flex{
+                flex-direction: column;
+            }
+            .left-aside figure{
+                margin: 0 auto 10px;
+            }
+            .banner{
+                background-image: url("images/slide2.jpeg");
+            }
+            .right-aside img{
+                display: none;
+            }
+            .side-nav{
+                display: flex;
+
+            }
+            .side-nav li{
+                flex: 1 0 0;
+                text-align: center;
+            }
+            .side-nav li a{
+                border-left: none;
+                border-top: 4px solid transparent;
+            }
+            .side-nav li a:hover, .side-nav li.active a{
+                color: #3b5998;
+                border-left: none;
+                border-top: 4px solid #3b5998;
+            }
+        }
+        footer{
+            padding: 10px 0;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="wrapper d-flex">
+            <img class="logo" src="images/facebook.png" alt="">
+            <div>
+                <a href="">Log In</a> | <a href="">Sign Up</a>
+            </div>
+        </div>    
+    </header>
+    <nav class="main-nav">
+        <ul class="wrapper d-flex">
+            <li class="active"><a href="">Home</a></li>
+            <li><a >Product</a>
+                <ul class="submenu">
+                    <li><a href="">Men</a></li>
+                    <li><a href="">Women</a></li>
+                    <li><a href="">Children</a></li>
+                </ul>
+            </li>
+            <li><a href="">Story</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">About</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <main class="d-flex">
+            <aside class="left-aside">
+                <figure>
+                    <img class="cover-fit" src="images/logo.jpg" alt="">
+                </figure>
+                <ul class="side-nav">
+                    <li class="active"><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Albums</a></li>
+                    <li><a href="">Films</a></li>
+                </ul>
+            </aside>
+            <article>
+                <div class="card">
+                    <div class="banner">
+
+                    </div>
+                    <h1>CSS</h1>
+                    <time>2020/10/15 09:30</time>
+                    <p>階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、層疊樣式表）是一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。目前最新版本是CSS2.1，為W3C的推薦標準。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發中。</p>
+                    <p>
+                        CSS不能單獨使用，必須與HTML或XML一起協同工作，為HTML或XML起裝飾作用。本文主要介紹用於裝飾HTML網頁的CSS技術。其中HTML負責確定網頁中有哪些內容，CSS確定以何種外觀(大小、粗細、顏色、對齊和位置)展現這些元素。CSS可以用於設定頁面布局、設定頁面元素樣式、設定適用於所有網頁的全域樣式。CSS可以零散地直接添加在要應用樣式的網頁元素上，也可以集中化內建於網頁、連結式引入網頁以及匯入式引入網頁。
+                    </p>
+                </div>
+                
+
+            </article>
+            <aside class="right-aside">
+                <img src="images/jk.png" alt="">
+            </aside>
+        </main>
+    </div>
+    <footer>Facebook Inc.</footer>
+</body>
+</html>

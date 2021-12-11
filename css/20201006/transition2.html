@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tansition</title>
+    <style>
+        .box-wrap:hover .box{
+            background: red;
+            width: 300px;
+        }
+        .box{
+            width: 200px;
+            height: 100px;
+            background: lightcoral;
+            transition: .5s;
+            margin:10px;
+        }
+        .box:hover{
+            
+        }
+        .linear{
+            transition-timing-function: linear;
+        }
+        .ease-in{
+            transition-timing-function: ease-in;
+        }
+        .ease-out{
+            transition-timing-function: ease-out;
+        }
+        .cubic1{
+            transition-timing-function: cubic-bezier(.81,0,.27,1.01);
+        }
+        .cubic2{
+            transition-timing-function: cubic-bezier(.16,-0.89,1,1.85);
+        }
+    </style>
+</head>
+<body>
+    <div class="box-wrap">
+        <div class="box">ease</div>
+        <div class="box linear">linear</div>
+        <div class="box ease-in">ease-in</div>
+        <div class="box ease-out">ease-out</div>
+        <div class="box cubic1">cubic1</div>
+        <div class="box cubic2">cubic2</div>
+
+    </div>
+
+</body>
+</html>

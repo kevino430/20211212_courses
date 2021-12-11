@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Form</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+          <form action="target.php">
+              <div class="form-group">
+                <input type="text" class="form-control" required placeholder="請填入帳號" id="account">
+            </div>
+            <div class="form-group">
+                <select id="select" class="form-control" name="" id="">
+                    <option value="">台北市</option>
+                    <option value="">新北市</option>
+                    <option value="">桃園市</option>
+                </select>
+            </div>
+            <!-- <input class="btn btn-primary" type="submit"> -->
+            <a class="btn btn-info text-white" id="submit">提交</a>
+          </form>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $("#submit").click(function(){
+            let account=document.getElementById("account").value;
+            //檢查是否有輸入
+            if(account==""){
+                alert("您沒有輸入帳號喔")
+                return;
+            }
+            //檢查帳號是否重複
+            //ajax
+            // alert("這個帳號已經有人使用了")
+
+            $("form").submit();
+        })
+
+        $("#account, #select").change(function(){
+            console.log("change!!")
+        })
+        $("#account").focus(function(){
+            console.log("focus")
+        })
+        $("#account").blur(function(){
+            console.log("blur")
+        })
+
+    </script>
+  </body>
+</html>

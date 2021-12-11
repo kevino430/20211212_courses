@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Slider</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .wrapper{
+            max-width: 800px;
+            height: 400px;
+            background: #000;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .slider-arrow{
+            z-index: 10;
+            width: 40px;
+            height: 100%;
+            opacity: .6;
+            cursor: pointer;
+        }
+        .slider-arrow:hover{
+            opacity: 1;
+        }
+        .slider-arrow-right{
+            right:0;
+        }
+        .slider-arrow .fas{
+            color:#fff;
+            font-size: 28px;
+        }
+        .slider-images{
+            /* width: 4000px; */
+            left: 0px;
+            transition: .4s;
+        }
+        .slider-images li{
+            /* width: 800px; */
+            height: 400px;
+            flex: 1 0 0;
+        }
+        .slider-images li img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .pages{
+            left:0;
+            bottom: 10px;
+        }
+        .pages li{
+            border: 1px solid #fff;
+            width: 28px;
+            height: 10px;
+            margin: 0 5px;
+        }
+        .pages li:hover{
+            background: #fff;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="wrapper position-relative">
+          <a class="position-absolute m-0 slider-arrow d-flex justify-content-center align-items-center" id="sliderPrev">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          <a class="position-absolute m-0 slider-arrow slider-arrow-right d-flex justify-content-center align-items-center" id="sliderNext">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        <ul class="list-unstyled m-0 slider-images d-flex position-absolute" id="sliderImages">
+            <li><img src="images/slide1.jpeg" alt=""></li>
+            <li><img src="images/slide2.jpeg" alt=""></li>
+            <li><img src="images/slide3.jpeg" alt=""></li>
+            <li><img src="images/slide4.jpeg" alt=""></li>
+            <li><img src="images/85.jpg" alt=""></li>
+
+        </ul>
+        <ul class="list-unstyled m-0 pages position-absolute d-flex w-100 justify-content-center" id="pages">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        let sliderIndex=0;
+        let sliderMove=0;
+        let sliderCount=$("#sliderImages li").length;
+        let sliderWidth=$(".wrapper").width();
+        $("#sliderImages").css("width", sliderCount*sliderWidth)
+
+        $("#pages li").eq(0).css("background", "#fff")
+        $("#pages li").on("mouseenter click",function(){
+            sliderIndex=$(this).index();
+            // console.log(index)
+            // console.log(sliderIndex)
+            // sliderMove=0-sliderIndex*800;
+            // $("#sliderImages").css("left", sliderMove)
+            // $(this).css("background", "#fff")
+            // .siblings().css("background", "transparent")
+            goSlide()
+        });
+
+        $("#sliderPrev").click(function(){
+            // alert("prev")
+            sliderIndex--;
+            if(sliderIndex<0)sliderIndex=sliderCount-1;
+            goSlide()
+            // console.log(sliderIndex)
+        })
+        $("#sliderNext").click(function(){
+            // alert("next")
+            sliderIndex++;
+            if(sliderIndex>=sliderCount)sliderIndex=0;
+            goSlide()
+            // console.log(sliderIndex)
+        })
+
+        // 把相同的東西存成同一個function
+        function goSlide(){
+            sliderMove=0-sliderIndex*sliderWidth;
+            $("#sliderImages").css("left", sliderMove)
+            $("#pages li").eq(sliderIndex).css("background", "#fff")
+            .siblings().css("background", "transparent")
+        }
+
+        $(window).resize(function(){
+           sliderWidth=$(".wrapper").width();
+           $("#sliderImages").css("width", sliderCount*sliderWidth)
+           goSlide()
+        })
+    </script>
+  </body>
+</html>

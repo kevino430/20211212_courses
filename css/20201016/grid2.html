@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid2</title>
+    <style>
+        .wrapper{
+            max-width: 960px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: "header header header header"
+            "nav nav nav nav"
+            "main main main aside"
+            "footer footer footer footer"
+            ;
+        }
+        header{
+            background: pink;
+            grid-area: header;
+        }
+        nav{
+            background: lightgreen;
+            grid-area: nav;
+        }
+        main{
+            background: lightskyblue;
+            grid-area: main;
+        }
+        aside{
+            background: lightyellow;
+            grid-area: aside;
+        }
+        footer{
+            background: lightsalmon;
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>header</header>
+        <nav>nav</nav>
+        <main>main</main>
+        <aside>aside</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+</html>

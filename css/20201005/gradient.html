@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        .box{
+            height: 160px;
+        }
+        .gra1{
+            background: linear-gradient(red, yellow);
+        }
+        .gra2{
+            background: linear-gradient(to left, red, yellow);
+        }
+        .gra3{
+            background: linear-gradient(to right, red, yellow, green, blue);
+        }
+        .gra4{
+            background: linear-gradient(45deg, red, yellow);
+        }
+        .gra5{
+            background: linear-gradient(to right, red 20%, yellow 50%, green, blue 80%);
+        }
+        .gra6{
+            background: linear-gradient(to right,red, yellow 50%, green 50%, blue);
+        }
+        .gra7{
+            background: linear-gradient(to bottom, #000 50%, #ccc 50%);
+        }
+        .gra8{
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,.9)), url("images/map.png");
+        }
+        .gra9{
+            background: repeating-linear-gradient(to bottom, #ccc, #000 20%);
+        }
+        .gra10{
+            background: linear-gradient(to bottom, #fff 50%, #000 50%);
+            background-size: 100% 40px;
+            /* height: 400px; */
+        }
+        .gra10b{
+            background: linear-gradient(45deg, #fff 50%, #000 50%);
+            background-size: 40px 40px;
+            /* height: 400px; */
+        }
+        .gra11{
+            background: radial-gradient(red, yellow);
+        }
+        .gra12{
+            background: radial-gradient(circle, red, yellow);
+        }
+        .gra13{
+            background: radial-gradient(at 200px bottom, red, yellow);
+        }
+        .gra14{
+            background: radial-gradient(circle at 200px bottom, red 10%, yellow 20%, rgb(255, 252, 87));
+        }
+        .gra15{
+            background: repeating-radial-gradient(circle at center bottom, pink, red, pink 20%);
+        }
+        .metal-btn{
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(to bottom, #fff, #333 50%, #000 50%, #333 90%, #fff );
+            color:#fff;
+            font-family: Arial, Helvetica, sans-serif;
+            margin:10px;
+            border-radius: 4px;
+            box-shadow: 0 0 3px #333, 0 0 6px #fff inset;
+            border: 1px solid #ccc;
+        }
+
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom, rgb(0, 164, 185), rgb(207, 14, 165));
+            color: transparent;
+            -webkit-background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <div class="box gra1"></div>
+    <div class="box gra2"></div>
+    <div class="box gra3"></div>
+    <div class="box gra5"></div>
+    <div class="box gra4"></div>
+    <div class="box gra6"></div>
+    <div class="box gra7"></div>
+    <div class="box gra8"></div>
+    <div class="box gra9"></div>
+    <div class="box gra10"></div>
+    <div class="box gra10b"></div>
+
+    <div class="box gra11"></div>
+    <div class="box gra12"></div>
+    <div class="box gra13"></div>
+    <div class="box gra14"></div>
+    <div class="box gra15"></div>
+
+    <a class="metal-btn">button</a>
+    <h1>Hello, World!!</h1>
+</body>
+</html>

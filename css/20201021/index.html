@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>article</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        :root{
+            --primary-color:  #3b5998;
+            --primary-color-hover: #8b9dc3;
+        }
+        .logo{
+            height: 48px;
+        }
+        .btn-primary{
+            background: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+        .btn-primary:hover{
+            background:var(--primary-color-hover);
+            border: 1px solid var(--primary-color-hover);
+        }
+        a, a:link{
+            color:var(--primary-color);
+        }
+    </style>
+  </head>
+  <body>
+    <header class="container-fluid py-2">
+        <a href=""><img class="logo" src="images/facebook.png" alt=""></a>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Shop
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Men</a>
+                <a class="dropdown-item" href="#">Women action</a>
+                <a class="dropdown-item" href="#">Children</a>
+              </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+    </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+            <main class="col-lg-9">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-white">
+                      <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">高雄總圖</li>
+                    </ol>
+                  </nav>
+                <article>
+                    <h1 class="h2">高雄總圖</h1>
+                    <figure class="figure">
+                        <img src="images/slide1.jpeg" class="figure-img img-fluid rounded" alt="...">
+                        <figcaption class="figure-caption">高雄總圖的夜景
+                        </figcaption>
+                      </figure>
+                    <p>高雄市立圖書館總館是位於臺灣高雄市前鎮區的市立圖書館館舍。由高雄市政府自行籌資興建，建築樓高8層，及地下1層，並以捐款人為樓層命名。為高雄市最大的公共圖書館，由高雄市立圖書館管理，也是其辦公場所的所在。</p>
+                    
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W9FB7RE0xfE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                    <p>本館占地面積2萬平方公尺，樓板面積有37,000平方公尺，每層的寬闊度為67.2公尺乘67.2公尺呈正方形，於樓板4個端角設立結構服務核，以懸吊樓板的方法將傳統直徑90公分的結構柱轉換成6至12公分鋼索，館中央設計巨型天井，於地面層挑高7.5公尺作為大尺度川堂，外觀採用綠建築，各樓層陽台以桂花植成樹籬，遮蔽陽光直射，館前廣場有40公尺深的活動區，館內設置臺灣國內第1座國際繪本中心圖書館暨兒童劇場。</p>
+                </article>
+            </main>
+            <aside class="col-lg-3">
+                <div class="sticky-top">
+                    <h3 class="h4 pt-3 ">附近景點</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">旗津港</li>
+                        <li class="list-group-item">小港機場</li>
+                        <li class="list-group-item">高雄文化中心</li>
+                        <li class="list-group-item">龍虎潭</li>
+                      </ul>
+                </div>
+                
+            </aside>
+        </div>
+      </div>
+      <footer class="text-center py-4 text-muted">
+          facebook
+      </footer>
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

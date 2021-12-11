@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Card</title>
+</head>
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  body{
+    background: #e9ebee;
+  }
+  .wrapper{
+    max-width: 960px;
+    margin:0 auto;
+    display: flex;
+  }
+  .card{
+    width: calc( 33.3% - 20px );
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 4px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .card p{
+    flex:1;
+  }
+  h2{
+    margin:0;
+  }
+  .text-truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+</style>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <h2 class="text-truncate">【貿易戰】傳取消美中貿易談判預備會議　白宮否認</h2>
+      <p>《金融時報》和美國消費者新聞與商業頻道（CNBC）周二引述知情人士報導，白宮認為美國語中國在執行智慧財產權法規方面仍存在分歧，因此取消原定在本周舉行的高級別貿易談判前預備會議。不過，白宮經濟顧問庫德洛（Larry Kudlow）出面否認此報導。</p>
+    </div>
+    <div class="card">
+      <h2 class="text-truncate">【微視蘋】Siri小姐在台藏6年首曝光！　揭內幕「不知自己錄Siri」</h2>
+      <p>「我是Siri，很高興為您服務。」身為果粉幾乎都和Siri說過話，她妙語如珠的回答更是逗樂、培養了不少忠實用戶，但幾乎沒人知道Siri小姐真面目，花1個月時間錄了上萬字句，成為台灣正港iPhone首代Siri小姐。</p>
+    </div>
+  </div>
+</body>
+</html>

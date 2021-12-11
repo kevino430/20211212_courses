@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        @keyframes changeColor{
+            0%{
+                background: rgb(55, 198, 255);
+            }
+            50%{
+                background: red;
+            }
+            100%{
+                background: plum;
+            }
+        }
+        @keyframes changeWidth {
+            0%{
+                width: 200px;
+            }
+            100%{
+                width: 300px;
+            }
+        }
+
+        .box{
+            margin:5px 0;
+            width: 200px;
+            height: 100px;
+            background:  rgb(55, 198, 255);
+            animation: changeColor 2s infinite alternate both, changeWidth 1s infinite alternate;
+        }
+        .box:hover{
+            /* animation-play-state: paused; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+</body>
+</html>

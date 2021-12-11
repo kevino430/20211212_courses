@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Overflow</title>
+    <style>
+        body{
+            background: #ccc;
+        }
+        .card{
+            background: #fff;
+            margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 240px;
+            float: left;
+        }
+        .card h3{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .card p{
+            overflow:hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+        }
+        .card2{
+            float: left;
+            background: #fff;
+            margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 240px;
+            /* word-break: break-all; */
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3 title="獨家｜台中12名外籍大學生檢疫驚現武肺症狀　4生發燒！快篩結果出爐">獨家｜台中12名外籍大學生檢疫驚現武肺症狀　4生發燒！快篩結果出爐</h3>
+        <p>台中市一所大學的18名印尼籍新生和1名家長上周三（9月30日）入境台灣，在台中市一家防疫旅館檢疫，不料隔天開始有人出現腹瀉、發燒等武漢肺炎疑似症狀，到今天（5）下午5點為止，已有12人就醫，其中4人發燒。他們快篩後都呈現陰性，但仍未排除染疫的可能。住院的10人中，有8人已2採陰出院，另2人明天再2次採檢。</p>
+    </div>
+    <div title="康軒董座檢疫趴趴走6次遭重罰　扯！吹哨者傳被開除" class="card">
+        <h3>康軒董座檢疫趴趴走6次遭重罰　扯！吹哨者傳被開除</h3>
+        <p>《蘋果新聞網》上月初獨家揭露康軒文教集團董事長李萬吉居家檢疫期間趴趴走，不但把手機留在家中，被查獲後還蓄意隱瞞外出次數，遭新北市衛生局重罰100萬元，李萬吉事後雖公開道歉，但如今竟傳出「吹哨者」員工遭開除。</p>
+    </div>
+    <div class="card2">
+        Pneumonoultramicroscopicsilicovolcanoconiosis
+        Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+    </div>
+</body>
+</html>

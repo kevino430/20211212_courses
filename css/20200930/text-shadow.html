@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text shadow</title>
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .shadow1{
+            text-shadow: 1px 1px 4px #333;
+        }
+        .shadow2{
+            color:#aaa;
+            background: rgb(105, 13, 105);
+            padding: 10px;
+            transition: .5s;
+        }
+        .shadow2:hover{
+            color:#fff;
+            text-shadow: 0 0 4px #fff, 0 0 8px pink, 0 0 12px red, 0 0 16px rgb(122, 2, 2);
+        }
+        .shadow3{
+            padding: 10px;
+            background: #000;
+            color:#fff;
+            text-shadow: 0 1px rgb(200,200, 200), 0 2px rgb(160,160, 160), 0 3px rgb(120,120, 120), 0 4px rgb(80,80, 80), 0 5px rgb(40,40, 40);
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="shadow1">Hello, CSS3</h1>
+    <h1 class="shadow2">Hello, CSS3</h1>
+    <h1 class="shadow3">Hello, CSS3</h1>
+
+</body>
+</html>

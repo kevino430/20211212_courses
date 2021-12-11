@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+
+		<meta charset="utf-8" />
+        <title>Flexble Box</title>
+
+		<style>
+       
+        .container {
+            border:1px dotted blue;
+            width:600px;
+            padding:10px;
+            display:flex;
+            justify-content:flex-start;
+            
+        }
+            
+            /*一個做為容器的元素設定了display:flex樣式,
+            接下來可進一步設定justify-content樣式, 以調整
+            其中元素配置的對應位置, 可能的值有
+            1.flex-start(元素以開始位置為基礎配置),
+            2.flex-end,
+            3.center(元素置中配置),
+            4.space-between(平均分配配置),
+            5.space-around(平均分配元素配置,第一個元素之前與最後一個元素之後,各保留元素間距一半的位置)*/
+           
+            .container div {
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+                margin: 10px;
+                text-align: center; /*文字置中*/
+                color: #ffffff;
+            }
+            
+		</style>
+		<script>
+			// JS寫在這裡
+		</script>
+	</head>
+     <body>
+        
+        
+         <div class="container">
+             <div>A</div>
+             <div>B</div>
+             <div>C</div>
+             <div>D</div>
+         </div>
+        
+	</body>
+</html>

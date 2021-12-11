@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex7-5</title>
+</head>
+<style>
+  body{
+    background: #000;
+  }
+  @keyframes rotate {
+    0% { background-position:0 0 }
+    100% { background-position:500px 0 }
+  }
+  .earth{
+    margin: 40px auto;
+    width: 281px;
+    height: 281px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url(images/earth2.jpg);
+    background-size: cover;
+    animation: rotate infinite linear 5s;
+    box-shadow: 0 0 20px 10px #000 inset, 0 0 20px #0a68b4;
+  }
+</style>
+<body>
+  <div class="earth">
+
+  </div>
+</body>
+</html>

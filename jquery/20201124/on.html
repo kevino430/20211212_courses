@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>On</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        ul li:hover {
+            background: lightblue;
+        }
+    </style>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        // $(document).ready(function(){
+
+        // });
+
+        $(function() {
+            let i = 3;
+            $("#add").click(function() {
+                $("ul").append("<li>item " + i + "</li>");
+                i++;
+            })
+
+            //selector 是動態產生時綁定事件
+            $("ul").on("click", "li", function() {
+                // console.log("item")
+                let content = $(this).text();
+                console.log(content)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <input type="text" class="form-control" id="input">
+        </div>
+        <button type="button" class="btn btn-primary on">on</button>
+        <div class="py-3">
+            <button class="btn btn-info" id="add">add</button>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+
+    <script>
+        //不同事件觸發一樣的動作時
+        // $(".btn").on("click mouseenter", function(){
+        //     // console.log("click")
+        //     console.log("hello!!")
+        // })
+
+        $("#input").on("change keyup", function() {
+                console.log("hi")
+            })
+            // $(".btn").on("dblclick", function(){
+            //     console.log("double click")
+            // })
+
+        //一個 selector 需要綁定多個事件時
+        $(".on").on({
+            click: function() {
+                console.log("click")
+            },
+            dblclick: function() {
+                console.log("double click")
+            },
+            contextmenu: function() {
+                console.log("right click")
+            },
+            mousedown: function() {
+                console.log("mouse down")
+            },
+            mouseup: function() {
+                console.log("mouse up")
+            },
+            mouseenter: function() {
+                console.log("mouse enter")
+            },
+            mouseleave: function() {
+                console.log("mouse leave")
+            },
+        })
+    </script>
+</body>
+
+</html>

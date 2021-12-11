@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Scroll top</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            /* height: 300vh; */
+        }
+        .go-top{
+            right: 20px;
+            bottom: 20px;
+        }
+        .full-page{
+            height: 100vh;
+        }
+        #home{
+            background: plum;
+        }
+        #shop{
+            background: powderblue;
+        }
+        #about{
+            background: rgb(230, 255, 117);
+        }
+    </style>
+  </head>
+  <body>
+      <div class="full-page" id="home">
+        home
+      </div>
+      <div class="full-page" id="shop">
+        shop
+      </div>
+      <div class="full-page" id="about">
+        about
+      </div>
+      <button type="button" class="btn btn-primary position-fixed go-top" id="goTop">top</button>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+    <script>
+        $("#goTop").click(function(){
+            // $(window).scrollTop(0)
+            let target=$("#shop").offset().top;
+
+            $("html").animate({
+                scrollTop: target
+            }, 700)
+
+        })
+    </script>
+  </body>
+</html>

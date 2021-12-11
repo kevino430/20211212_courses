@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat walk</title>
+    <style>
+        @keyframes walk {
+            from{
+                background-position: left top;
+            }
+            to{
+                background-position: -3150px top;
+            }
+        }
+
+        .cat{
+            width: 350px;
+            height: 380px;
+            margin: 0 auto;
+            background: url("images/cat.png") left top;
+            animation: walk .8s infinite steps(9);
+        }
+    </style>
+</head>
+<body>
+    <div class="cat"></div>
+</body>
+</html>

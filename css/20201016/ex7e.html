@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex7e</title>
+    <style>
+        @keyframes rotate {
+            from{
+                background-position: left top;
+            }
+            to{
+                background-position: -500px top;
+            }
+        }
+        body{
+            background: #000;
+        }
+        .earth{
+            width: 281px;
+            height: 281px;
+            margin: 0 auto;
+            background: url("images/earth2.jpg");
+            border-radius: 50%;
+            overflow: hidden;
+            animation: rotate 5s infinite linear;
+            box-shadow: 0 0 20px rgb(69, 181, 255), 0 0 40px rgb(69, 181, 255), 0 -10px 60px rgba(0,0,0,1) inset;
+        }
+    </style>
+</head>
+<body>
+    <div class="earth">
+
+    </div>
+</body>
+</html>

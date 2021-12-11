@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex7-c</title>
+    <style>
+        @keyframes earthRotate {
+            0%{
+                transform: rotate(0) translateX(250px);
+            }
+            100%{
+                transform: rotate(360deg) translateX(250px);
+            }
+        }
+
+        body{
+            background: url("images/space-bg.jpg");
+        }
+        .box{
+            /* border: 1px solid #ccc; */
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .orbit{
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+            border:1px solid #ccc;
+        }
+        .sun{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin: -64px 0 0 -64px;
+        }
+        .earth{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin: -36px 0 0 -36px;
+            animation: earthRotate 4s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="orbit"></div>
+        <img class="sun" src="images/sun.png" alt="">
+        <img class="earth" src="images/earth.png" alt="">
+    </div>
+</body>
+</html>

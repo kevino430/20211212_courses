@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        .wrapper{
+            max-width: 960px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: "header header header header"
+            "nav nav nav nav"
+            "main main main aside"
+            "footer footer footer footer"
+            ;
+        }
+        
+        img{
+            max-width: 100%;
+        }
+        header{
+            grid-area: header;
+        }
+        header img{
+            display: block;
+        }
+        nav{
+            grid-area: nav;
+        }
+        .main-nav{
+            margin:0;
+            padding:0;
+            display: flex;
+            list-style: none;
+        }
+        .main-nav a{
+            display: block;
+            padding: 10px 20px;
+            color:#333;
+            text-decoration: none;
+        }
+        .main-nav a:hover{
+            background: #eee;
+        }
+        h1{
+            margin-top:0;
+            padding: 200px 20px 20px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,.8)), url("images/sendai-gourmet_49428614_M.jpg");
+            color:#fff;
+        }
+        main{
+            grid-area: main;
+            margin-right: 10px;
+        }
+        aside{
+            grid-area: aside;
+        }
+        footer{
+            grid-area: footer;
+            text-align: center;
+            padding: 10px 0;
+        }
+        @media screen and (max-width: 768px){
+            .wrapper{
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-areas: "header"
+                "nav"
+                "main"
+                "aside"
+                "footer";
+            }
+            .main-nav li{
+                flex: 1 0 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="images/japan-tohoku.jpg" alt="">
+        </header>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="">Home</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <h1>仙台市</h1>
+                <!-- <img src="images/sendai-gourmet_49428614_M.jpg" alt=""> -->
+                <p>仙台市（日語：仙台市／せんだいし Sendai shi */?，舊字體：仙臺市）是日本宮城縣縣治，位於宮城縣中部，為政令指定都市，同時也是東北地方最大的城市。該市一般被認為得名於古城千代城，於1600年由安土桃山時代名將伊達政宗擴建並改名為同音[註 1]的仙臺。「仙臺」一語出自唐代韓翃的七言律詩《同題仙遊觀》[1][2]。由於全市綠化比例高，而有「杜之都」（森林之都）之譽。</p>
+                <h2>歷史</h2>
+                <p>仙臺藩主伊達政宗最早在此建城，奠定了現在仙臺市的市街基礎。伊達政宗自1600年開始築城，之後不斷推行新計畫，進行城建設計和開發等。當時的仙臺非常繁榮，西班牙的使節形容當時的情形為—東西南北人來人往，勝似江戶（現在的東京）。</p>
+                <img src="images/848373687d4927cd37d286006657eb0ec9aef387.jpg" alt="">
+                <p>仙臺的街道既重功能性又具有現代化城市的特點，其發展完全歸功於伊達政宗的遠見，他為未來的仙臺市的發展打好基礎。仙臺的街道布局和現在發展情形連同廣瀨川一起，從伊達政宗所建造的仙臺古城遺跡上往下俯瞰，一覽無遺。</p>
+            </article>
+        </main>
+        <aside>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d400706.38006536604!2d140.485982443677!3d38.31382007665487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8a2aee30cd55d3%3A0xba2579e0b846b1ee!2z5pel5pys5a6u5Z-O57ij5LuZ5Y-w5biC!5e0!3m2!1szh-TW!2stw!4v1602827370898!5m2!1szh-TW!2stw" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </aside>
+        <footer>
+            Japan Travel
+        </footer>
+    </div>
+</body>
+</html>

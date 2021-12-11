@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tansition</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: lightcoral;
+            transition: background .5s, width .5s .5s, height .5s 1s;
+            /* transition: .5s .5s; */
+            margin:10px;
+        }
+        .box:hover{
+            background: red;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+
+</body>
+</html>
